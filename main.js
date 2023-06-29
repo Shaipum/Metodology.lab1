@@ -55,3 +55,44 @@ const askUser = (questionPrompt) => {
 
     return input;
 } 
+
+//interactive mode
+const startInteractiveMode = () => {
+    const questions = ['a = ', 'b = ', 'c = '];
+    const answers = questions.map(element => askUser(element));
+
+    return EquationConc(...answers);
+}
+
+//non-interactive mode
+ const startNonInteractiveMode = () => {
+    const filePath = process.argv[2];
+    const fileExists = existsSync(filePath);
+
+    if (!fileExists) {
+        console.log(`file ${filePath} does not exist`);
+        process.exit(1);
+    }
+
+    const text = readFileSync(filePath, 'utf8');
+    const argArray = text.split(' ').map(element => Number(element));
+    
+    if (argArray.length !== 3) {
+        console.log('invalid file format');
+        process.exit(1);
+    }
+
+    if (argArray[0] === 0) {
+        console.log('Error. a cannot be 0');
+        process.exit(1);
+    }
+
+    return EquationConc(...argArray);
+}
+
+//main starter condition
+if (process.argv.length === 2) {
+    startInteractiveMode();
+} else if (process.argv.length === 3) {
+    startNonInteractiveMode();
+}
