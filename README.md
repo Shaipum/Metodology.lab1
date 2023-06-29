@@ -27,3 +27,5 @@ node main.js
 ```bash
 node main.js <file>
 ```
+
+[Reverted commit](https://github.com/Shaipum/Metodology.lab1/commit/336738c1aee87a27deb971fdfdeb3a29341f143a)
