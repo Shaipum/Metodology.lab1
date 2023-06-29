@@ -27,4 +27,3 @@ node main.js
 ```bash
 node main.js <file>
 ```
-here will be revert-commit
