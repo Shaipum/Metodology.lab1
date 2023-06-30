@@ -8,7 +8,7 @@ To build and run the application, follow these steps:
 
 1. Clone the repository to your local machine:
 ```bash
-git clone https://github.com/Shaipum/Metodology.lab1
+git clone https://github.com/Shaipum/Metodology.lab1.git
 ```
 2. Install Node.js on your machine if you haven't already.
 3. Navigate to the root directory of the repository:
